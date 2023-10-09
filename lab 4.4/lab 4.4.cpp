@@ -5,6 +5,7 @@
 // Варіант 23
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -19,6 +20,12 @@ int main() {
     cin >> xk;
     cout << " dx = ";
     cin >> dx;
+    cout << fixed;
+    cout << "-----------------------------" << endl;
+    cout << "|" << setw(7) << "x" << "      |"
+        << setw(7) << "y" << "      |" << endl;
+    cout << "-----------------------------" << endl;
+
 
     for (double x = xp; x <= xk; x += dx) {
         double y;
@@ -34,8 +41,12 @@ int main() {
             y = sin(x);
         else 
             y = tan(45 * pi / 180) * x - pi;
-        cout << "x: " << x << ", y: " << y << std::endl;
+        cout << "|" << setw(12) << setprecision(3) << x
+            << " |" << setw(12) << setprecision(3) << y
+            << " |" << endl;
+
     }
+    cout << "-----------------------------" << endl;
 
     return 0;
 }
